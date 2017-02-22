@@ -1,0 +1,99 @@
+<import src="../common/header.wxml" />
+<import src="../common/footer.wxml" />
+<template name="warning" >
+    <view class="warning" style="display:{{show_warning}}">
+        <view>
+        <icon type="info" size="28"></icon>
+        <view class="msg">{{msg}}</view>
+        </view>
+    </view>
+</template>
+<view class="container">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+        <view class="images-wrapper section" style="height:280rpx;">
+          <text class="images-text">活动题图</text>
+          <view class="images-list">
+            <block wx:for="{{imageList}}" wx:for-item="image">
+              <image src="{{image}}" mode="aspectFill" class="images-image" data-src="{{image}}" bindtap="previewImage"></image>
+            </block>
+            <view class="images-image image-plus" bindtap="chooseImage">
+              <view class="image-plus-horizontal"></view>
+              <view class="image-plus-vertical"></view>
+            </view>
+          </view>
+          <input type="hidden" name="file" class="hidden" value="{{file}}" />
+          <icon type="{{errors.i_image.icon}}" size="20" style="display:{{errors.i_image.show}}"></icon>
+        </view>
+        <view class="section">
+            <input name="title" type="text" placeholder="活动主题" bindblur="checkInput" data-type="text" placeholder-class="input_holder"  cursor-spacing="0" data-error="i_title" />
+            <icon type="{{errors.i_title.icon}}" size="20" style="display:{{errors.i_title.show}}"></icon>
+        </view>
+        <view class="section topic" >
+            <textarea name="topic" id="topic" maxlength="-1" bindblur="checkInput" bindlinechange="topiclinechange"   placeholder="活动简介" placeholder-class="input_holder" data-error="i_topic" data-type="text" rows="5"  />
+            <icon type="{{errors.i_topic.icon}}" size="20" style="display:{{errors.i_topic.show}}"></icon>
+        </view>
+        <view class="split-bottom"></view>
+        <view class="split-top"></view>
+        <view class="section {{show_org}}" >
+            <view class="label">所属组织</view>
+            <view class="controls" >
+            <picker bindchange="bindOrgChange" value="{{org_index}}" range="{{org_list}}" class="inline-picker">
+                <view >
+                {{org_list[org_index]}}
+                </view>
+            </picker>
+            <input name="org_id" type="text" value="{{org_id_list[org_index]}}" class="hidden" />
+            </view>
+        </view>
+        <view class="section">
+            <view class="label">活动时间</view>
+            <picker  name="start_time" class="inline-picker-short" mode="time" value="06:00" start="05:00" end="22:00" bindchange="bindTimeChange">
+                <view>
+                {{time_select}}
+                </view>
+            </picker>
+            <picker name="start_date" mode="date" value="{{date_array[date_index]}}" class="inline-picker  {{i_error=='i_start_date'?'error':'normal'}}"  start="{{date_start}}" end="{{date_end}}" bindchange="bindDateChange">
+                <view>
+                {{date_select}}
+                </view>
+            </picker>
+            
+        </view>
+        <view class="section">
+            <input name="loc_name" placeholder="请选择活动地点（点击右侧图标）" value="{{loc_name}}" class="location"   type="text" placeholder-class="input_holder"  data-type="text" data-error="i_loc_name"  /> 
+            <icon type="{{errors.i_loc_name.icon}}" size="20" style="display:{{errors.i_loc_name.show}}"></icon>
+            <image id="location_chooser" src="/images/icon_location.png" bindtap="chooseLocation" ></image>
+            
+            <input type="text" class="hidden" name="location" value="{{location}}" />
+        </view>
+
+        <view class="section">
+            <input name="linkman" type="text" value="{{org_linkman_list[org_index]}}" placeholder="发起人姓名" data-type="text" placeholder-class="input_holder" data-error="i_linkman" bindblur="checkInput" />
+            <icon type="{{errors.i_linkman.icon}}" size="20" style="display:{{errors.i_linkman.show}}"></icon>
+        </view>
+        <view class="section">
+            <!--<view class="section__title">联系电话</view>-->
+            <input name="phone" type="digit" placeholder="联系电话" value="{{org_linkman_phone_list[org_index]}}" placeholder-class="input_holder" data-type="phone" data-error="i_phone" bindblur="checkInput"  />
+            <icon type="{{errors.i_phone.icon}}" size="20" style="display:{{errors.i_phone.show}}"></icon>
+        </view>
+        <view class="section">
+            <view class="label">人数限制</view>
+            <view class="controls" >
+            <input name="counter"  type="number" style="display:{{show_limit}}"   placeholder="人数上限" data-type="number" data-error="i_limit" bindblur="checkInput" data-depend="{{show_limit}}" class="short" />
+            <switch name="limit"  bindchange="switch2Change" />  
+            
+            </view>  
+            <icon type="{{errors.i_limit.icon}}" size="20" style="display:{{errors.i_limit.show}}"></icon>      
+        </view>
+    
+    <view class="btn-area">
+        <button formType="submit"  type="primary"  class="primary">提交</button>
+        <button formType="reset">重填</button>
+    </view>
+    
+    </form>
+    
+</view>
+
+<template is="warning" data="{{...warning}}"></template>
+

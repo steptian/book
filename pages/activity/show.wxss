@@ -1,0 +1,287 @@
+/* pages/activity_join/activity_join.wxss */
+.container{
+    padding:0;
+    margin:0;
+    display:block;
+    text-align:left;
+    font-size:1rem;
+    font-family: '微软雅黑';
+
+}
+.activity_info{margin-bottom: 2rpx;width:100%;}
+.activity_info text{
+    margin:0.2rem 0;
+    padding-left:0.5rem;
+    display:block;
+    text-align:left;
+    font-family: '微软雅黑'
+}
+
+.result_title{
+  height:80rpx;
+  line-height: 80rpx;
+  padding:0;
+  margin:0;
+  font-size: 26rpx;
+  color: #999999;
+  border-bottom:1rpx solid #cccccc;
+}
+
+.result_title text{
+    display: inline-block;
+}
+.counter{
+    color:coral;
+    font-weight: bold;
+}
+
+.btn-area{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    padding:0;
+    background-color:#ffffff;
+    border-top: 1rpx solid #999999;
+    box-shadow: 0 5rpx 30rpx #999999;
+    display: block;
+    text-align: right;
+}
+
+.btn-area button{
+    width: 4rem;
+    height: 60rpx;
+    margin: 20rpx 15rpx;
+    line-height: 60rpx;
+    padding:0;
+    font-size:30rpx;
+    float:right;
+}
+.activity_info_detail{
+    margin:0.5rem;
+}
+.topic{
+    display: block;
+    margin:0.5rem;
+    font-size:1rem;
+    font-family: '微软雅黑';
+    clear:both;
+    padding-right:0.5rem;
+}
+
+.act_topic{
+    padding-top:0.5rem;
+    padding-right:0.5rem;
+}
+
+.userinfo-avatar{
+    width:40rpx;
+    height:40rpx;
+    border-radius: 50%;
+}
+
+.transit{
+    text-indent: 0.5rem;
+    font-size:0.8rem;
+    margin-bottom:0.5rem;
+}
+.transit-title{
+    background-color: #eeeeee;
+    display: block;
+    font-weight: bold;
+}
+.title{
+    border-bottom:1px solid #999999;
+}
+
+.transit text{
+    display: block
+}
+
+.detail{
+    display: block;
+    clear: both;
+}
+
+.detail image{
+    vertical-align: text-top;
+    margin-top:5rpx;
+
+}
+
+.detail text{
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.sign_time{
+    display: block;
+    font-size:20rpx;
+    position: relative;
+    float:right;
+    height: 40rpx;
+}
+
+.sign_time text{
+    margin-left:30rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+}
+
+.sign_time icon{
+    position: absolute;
+    left:0;
+    top:10rpx;
+}
+
+
+#btn_sign,#btn_remind{
+    position: fixed;
+    bottom: 50rpx;
+    right:50rpx;
+    width: 100rpx;
+    height:100rpx;
+    z-index: 999;
+}
+#btn_sign button,#btn_remind button{
+    width:100rpx;
+    height:100rpx;
+    border-radius: 50%;
+    margin: 0;
+    padding:0;
+    vertical-align: middle;
+    line-height: 100rpx;
+    font-size: 0.8rem;
+}
+#btn_remind{
+    bottom:170rpx;
+}
+
+
+text.num{
+    width: 1.5rem;
+    text-align: left;
+}
+
+image.slide-image{
+    display: block;
+    width: 100%;
+    min-height: 100rpx;
+    max-height: 300rpx;
+    border-bottom:1rpx solid #999999; 
+    box-shadow: 1rpx 1rpx 5rpx #999999;
+}
+
+swiper{
+    border-bottom:1rpx solid #999999; 
+    box-shadow: 1rpx 1rpx 5rpx #999999;
+}
+
+.header{
+    border-bottom: 1rpx solid #999999;
+    margin-bottom: 20rpx;
+    background-color: #ffffff;
+    box-shadow: 1rpx 1rpx 5rpx #999999;
+    position: relative;
+}
+
+.header image.status{
+  position: absolute;
+  width: 120rpx;
+  height:120rpx;
+  right:0;
+  top:0;
+  z-index: 99;
+}
+
+.names{
+    border-bottom: 1rpx solid #999999;
+    border-top: 1rpx solid #999999;
+    margin: 20rpx 0;
+    background-color: #ffffff;
+    position: relative;
+    min-height: 150rpx;
+    padding-left:15rpx;
+    box-shadow: 1rpx 1rpx 5rpx #999999;
+}
+
+
+.act_name{
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    font-size:35rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+
+.act_time{
+    display: block;
+    position: absolute;
+    top:60rpx;
+    left:0;
+    font-size:22rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+}
+
+.call{
+    height: 60rpx;
+    border-left:1rpx solid #999999;
+    width: 120rpx;
+    position: absolute;
+    top:25rpx;
+    right:0;
+}
+
+.call image{
+    width: 40rpx;
+    height: 40rpx;
+    margin:10rpx 40rpx;
+}
+
+.location{
+    height: 80rpx;
+    position: relative;
+    margin-top:110rpx;
+    display: block;
+    width: 100%;
+    border-top:1rpx solid #999999;   
+}
+
+.location .act_loc{
+    display: inline-block;
+    height: 80rpx;
+    line-height: 75rpx;
+}
+
+.location .dist{
+    display:inline-block;
+    font-size:20rpx;
+    height: 80rpx;
+    line-height: 75rpx;
+    color: #999999;
+}
+
+.location image.left{
+    float:left;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top:22rpx;
+}
+
+.location image.right{
+    float:right;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top:20rpx;
+    margin-right:30rpx;
+}
+
+.bottom{
+    height: 200rpx;
+    display: block;
+}
+

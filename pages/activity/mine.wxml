@@ -1,0 +1,39 @@
+<!--pages/activity/mine.wxml-->
+<template name="navis" >
+    <view class="left">
+    <text class="act_name">{{act_name}}</text><text class="act_time">{{start_date}} {{start_time}} {{weekday}}</text>
+    <text wx:if="{{icreate==true}}" class="icreate">(我创建)</text>
+    <text wx:else class="icreate">(我参与)</text>
+    <text class="act_location">{{loc_name}}</text>
+    
+    </view>
+    <view class="right">
+      <image src="/images/icon_status_{{status}}.png"></image>
+    </view>
+</template>
+<view class="index">
+  <view class="body">
+    <view class="head" >
+        <image src="/images/icon_search.png" class="icon_search"></image>
+        <input type="text" name="keyword" class="searcher" placeholder="输入查询我的约跑" bindconfirm="startSearch" />
+        <button type="default" class="btn_cancel" bindtap="cancelSearch">取消</button>
+    </view>
+    <view class="result" wx:if="{{actlist.length>0}}" >
+      <view class="result_list">
+        <view wx:for="{{actlist}}" wx:for-index="idx" wx:for-item="itemName" class="list" bindtap="showAct" data-actid="{{itemName.act_id}}" >
+          <template is="navis" data="{{...itemName}}" ></template>
+        </view>
+      </view>
+    </view>
+    <view class="result" wx:if="{{isSearch && actlist.length==0 }}" >
+      <view class="result_list">
+        <view class="noresult" >
+            <icon type="info" size="30" color="orange"></icon>
+            <text>没有找到</text>
+        </view>
+      </view>
+    </view>
+
+    <!--<navigator class="primary"  url="../activity/create">创建约跑</navigator>-->
+  </view>
+</view>

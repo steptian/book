@@ -1,0 +1,168 @@
+page{
+    font-family: '微软雅黑'
+}
+
+.index{
+    background-color: #FBF9FE;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    flex: 1;
+    min-height: 100%;
+    font-size: 32rpx;
+}
+
+.head{
+    height: 90rpx;
+    padding:30rpx 30rpx 0;
+    margin:0 0 30rpx 0;
+    box-shadow: 0 5rpx 30rpx #999999;
+    position: relative;
+    overflow: hidden;
+}
+
+.searcher{
+    display: block;
+    border:1rpx solid #999999;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size:30rpx;
+    border-radius: 25rpx;
+    padding-left:1.8rem;
+    font-family: '微软雅黑';
+    margin-right:100rpx;
+}
+
+.icon_search{
+    position: absolute;
+    width: 30rpx;
+    height: 30rpx;
+    left:40rpx;
+    top:40rpx;
+}
+
+
+.result{
+  margin: 0 25rpx;
+  border:1rpx solid #cccccc;
+  border-radius: 5rpx;
+  box-shadow: 1rpx 1rpx 5rpx #999999;
+  background-color: #ffffff;
+}
+
+#location{
+  background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKMSURBVHja7JzBjtswDER3CAN77Gfmm/KZPfbEbQ8FetmtNzapGXEGyCUBZJlPQ0qOJWTmm8WjcAgMxDIQA7EMxEAsAzEQy0AMxDIQy0AMxHpFx90NPh6Pyv6++mgaVR16Pp/cQIggfNYGRjmEDIQcnGMQiK+uRQMmyEDkgEFA75CqQp2KbjmEYOAisPxGnzARSBaBONNOskIJYhgoDMqZtnMKkFwIoroOyQHJiwHaHkoMh3HWlbmrQxhhnO1H7gQkBWBQ9CcMg2tFH1NHImvqCvURtduACbuDS7HAHSi4zr+fjoFT5vxDdCDlyd9gh3DNdO5wTatLojlouNhmNkC0Q5oCmgayD1jsCAQFQcQnny79UgDykwBwy0obvzUtZV2ZHEguPv1uL9kTh9uBVNiYKWCKDoGD7JW6gYgELMcDyVnHC6WCQzrqRe7ojiogPwhGZ8v/+BXZ4Gi2N150SZK64N2zrDVT5nEvynWsPSTWL9EcwLzYJhbAyE7AjG+/3xlcvImt7CuLOgpz71ebb0A0eKhnWXfMuFhqQ9k1Q7XjC1Nr6T0F4Q0zw9hi2gtRKEscH7vcyC7OjekBYBtUsdsNKRbylQ4BsUsonBoCo3P1tbE7EKUCjykOYUpdVJMKxsfvSXItTAPCvGDEVIdgiBOlU1ZHwGgPM2AAwpS6YIf0B4L6UY3CSw7Z1BYMpDd1SRyCw+aQFfWE6skBY8qqCJD3qRPVE6nzuliBdKQu2CH9AfOGHaLUJXm0oOqGnb8Bz298Tw/jjxTOy/rfK6mVB/rbIaqBnFhDMAGqWlF/dUucjMMUz1zEydohmeYwa1u5U5ZlIAZiGYiBWAZiIJaBWAZiIJaBGIhlIJvqQ4ABABekheCLbTQfAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-size:1rem;
+  background-position: 0.2rem;
+  font-size: 26rpx;
+  float: right;
+  text-indent: 40rpx;
+  line-height: 80rpx;
+  vertical-align: middle;
+  
+}
+.title{
+    font-size: 52rpx;
+}
+.desc{
+    margin-top: 10rpx;
+    color: #888888;
+    font-size: 28rpx;
+}
+
+.list{
+  display:block;
+  position: relative;
+  margin:15rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  font-size:22rpx;
+  height: 90rpx;
+  font-family: '微软雅黑';
+}
+
+.list:last-child{
+  border:none;
+}
+
+.list text{
+  height: 30rpx;
+  line-height: 30rpx;
+  vertical-align: middle;
+}
+
+.list .left{
+  height: 90rpx;
+  position: absolute;
+  left:0;
+  top:0;
+  min-width: 4rem;
+}
+
+.list .right{
+  height: 90rpx;
+  line-height: 80rpx;
+  font-size:30rpx;
+  text-align: right;
+  position: absolute;
+  right:0;
+  top:0;
+  min-width: 3rem;
+}
+
+.list .right image{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  right:-15rpx;
+  top:-15rpx;
+}
+
+.list .act_name{
+  font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+
+.list .act_time{
+  color:#aaaaaa;
+  margin-left:15rpx;
+}
+
+.list .act_location{
+  display: block;
+  color:#aaaaaa;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+
+button.btn_cancel{
+  position: absolute;
+  width: 80rpx;
+  height: 50rpx;
+  top:32.5rpx;
+  right:30rpx;
+  font-size:22rpx;
+  line-height: 50rpx;
+  padding:0;
+  color:#999999;
+  letter-spacing: 3rpx;
+}
+
+.noresult{
+  margin:30rpx;
+  position: relative;
+}
+
+.noresult icon{
+  position: absolute;
+  left:0;
+  top:-8rpx;
+}
+
+.noresult text{
+  height: 30rpx;
+  line-height: 30rpx;
+  padding-left:80rpx;
+  font-size:30rpx;
+  color: #999999;
+  font-family: '微软雅黑';
+}

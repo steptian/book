@@ -1,0 +1,107 @@
+<view class="container">
+  <view class="activity_info">
+    <view class="header">
+    <image wx:if="{{activity_info.status}}" class="status" src="/images/icon_status_big_{{activity_info.status}}.png"></image>
+    <block wx:if="{{activity_info.image_path}}">
+    <image src="https://a.lares.me/static/{{activity_info.image_path}}" class="slide-image" mode="aspectFill" />
+    </block>
+    </view>
+    <view class="names">
+      <text class="act_name">{{activity_info.act_name}}</text>
+      
+      <text class="act_time" wx:if="{{activity_info.org_id!=0}}">{{activity_info.start_date}} {{activity_info.start_time}} {{activity_info.weekday}} by {{activity_info.org_name}}(组织)
+      </text>
+      <text class="act_time" wx:else>{{activity_info.start_date}} {{activity_info.start_time}} {{activity_info.weekday}} by {{activity_info.user_name}}(个人)      
+      </text>
+
+      <view class="call" bindtap="callme">
+        <image src="/images/icon_phone.png" class="icon_phone" ></image>
+      </view>
+      <!--<text class="act_org">{{activity_info.org_name}} {{activity_info.linkman}}</text>-->
+      <!--<text bindtap="callme">{{activity_info.phone}}</text>-->
+        <view class="location" bindtap="openLocation">
+        <image class="left" src="/images/icon_location.png" ></image>
+        <text class="act_loc"  >{{activity_info.loc_name}}</text>
+        <text class="dist" wx:if="{{activity_info.dist}}">（{{activity_info.dist}}）</text>
+        <image class="right" src="/images/arrowright.png" ></image>
+      </view>
+    </view>
+    <view class="names">
+      <text class="act_topic">{{activity_info.topic}}</text>
+    </view>
+    
+    <!--<text bindtap="callme">电话：{{activity_info.phone}} (点击可直接拨打)</text>-->
+
+  <view class="names">
+    <view class="result_title">
+      <view class="left"><text>报名人数：</text><text class="counter">{{counter}}</text></view>
+    </view>
+
+    <view class="activity_info_detail" wx:for="{{act_detail}}" wx:for-index="idx" wx:for-item="item" >
+      <view class="detail">
+        <text class="num">{{idx+1}}、</text>
+        <image  class="userinfo-avatar" src="{{item.avatarUrl}}" background-size="cover"></image>
+        <text class="name">{{item.name}}</text>
+        <view class="sign_time" wx:if="{{item.isign==1 && item.sign_time !='null'}}">
+        <text>{{item.sign_time}}</text>
+        <icon type="success_circle" size="20"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+    
+
+
+  </view>
+  
+  
+  <!--<text class="title" bindtap="openLocation" wx:if="{{transits}}">路线（点击查看地图）</text>
+  <view class="transit" wx:for="{{transits}}" wx:for-index="idx" wx:for-item="transit" bindtap="openLocation" >
+    <text class="transit-title">方案{{idx+1}}，距离：{{transit.distance}}，步行：{{transit.walking_distance}}</text>
+    <text>路费：{{transit.cost}}元，用时：{{transit.duration}}</text>
+    <view wx:for="{{transit.segments}}" wx:for-index="idx_seg" wx:for-item="segment" >  
+      <text wx:if="{{segment.walking.length!=0 && segment.bus.buslines.length>0}}">步行{{segment.walking.distance}}米</text>
+      <view wx:for="{{segment.bus.buslines}}" wx:for-index="idx_busline" wx:for-item="busline" >
+        
+        <text wx:if="{{idx_seg!=0}}">换乘{{busline.name}}</text>
+        <text wx:else>乘坐{{busline.name}}</text>
+        
+        <text wx:if="{{segment.entrance.name &&  busline.type=='地铁线路'}}">{{busline.departure_stop.name}}站上车【{{segment.entrance.name}}进站】</text>
+        <text wx:else>{{busline.departure_stop.name}}站上车</text>
+        <text>——经{{busline.via_num}}站——</text>
+        <text wx:if="{{segment.exit.name && busline.type=='地铁线路' }}">到达{{busline.arrival_stop.name}}站【{{segment.exit.name}}出站】</text>
+        <text wx:else>到达{{busline.arrival_stop.name}}站</text>
+        
+      </view>
+      <text wx:if="{{segment.walking.length!=0 && segment.bus.buslines.length==0}}">步行{{segment.walking.distance}}米，到达终点</text>
+    </view>
+  </view>-->
+<view class="bottom">
+
+</view>
+</view>
+
+
+
+<view class="btn-area">
+  <form report-submit="true" bindsubmit="join">
+    <view wx:if="{{ihave!=1}}" >
+      <button type="primary"  formType="submit" >报名</button>
+    </view>
+    <view wx:else class="buttonlist">
+      <button type="primary"  disabled="true"  >已报</button>
+    </view>
+  </form>
+
+  <view wx:if="{{isign!=1 && ihave==1}}" >
+      <button type="primary"  bindtap="sign">签到</button>
+    </view>
+  <view wx:if="{{isign==1}}" class="buttonlist">
+    <button type="primary"  disabled="true"  >已签</button>
+  </view>
+
+
+  <!--<form report-submit="true" bindsubmit="switch2Change" >
+    <button type="primary"  formType="submit">提醒</button>
+  </form>-->
+</view>
